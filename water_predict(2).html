@@ -1,0 +1,108 @@
+<!-- index1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(download\ \(2\).jpeg);
+            background-position: center;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #form-container {
+            background-color: #d2d4d4;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px; /* Adjust the width as needed */
+        }
+        #form-container:hover{
+            opacity: 2.5 rem;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #8ed1e3;
+        }
+
+        #prediction-result {
+            text-align: center;
+            margin-top: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div id="form-container">
+    <h2>Water Quality Prediction</h2>
+    <form action="{{ url_for('predict') }}" method="post">
+        <label for="ph">pH:</label>
+        <input type="text" id="ph" name="ph" required>
+
+        <label for="Hardness">Hardness:</label>
+        <input type="text" id="Hardness" name="Hardness" required>
+
+        <label for="Solids">Solids:</label>
+        <input type="text" id="Solids" name="Solids" required>
+
+        <label for="Chloroamines">Chloroamines:</label>
+        <input type="text" id="Chloroamines" name="Chloroamines" required>
+
+        <label for="Sulfate">Sulfate:</label>
+        <input type="text" id="Sulfate" name="Sulfate" required>
+
+        <label for="Conductivity">Conductivity:</label>
+        <input type="text" id="Conductivity" name="Conductivity" required>
+
+        <label for="Organic_Carbon">Organic Carbon:</label>
+        <input type="text" id="Organic_Carbon" name="Organic_Carbon" required>
+
+        <label for="Trihalomethanes">Trihalomethanes:</label>
+        <input type="text" id="Trihalomethanes" name="Trihalomethanes" required>
+
+        <label for="Turbidity">Turbidity:</label>
+        <input type="text" id="Turbidity" name="Turbidity" required>
+
+        <button type="submit">Predict</button>
+    </form>
+    
+    {{ prediction_text }}
+</div>
+
+</body>
+</html>

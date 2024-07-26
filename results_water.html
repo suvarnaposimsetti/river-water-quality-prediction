@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            font-size: 2em;
+            width: 100%;
+        }
+        .result-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2em;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        .result-card h2 {
+            color: #333;
+        }
+        .result-card p {
+            margin: 1em 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Prediction Results
+    </div>
+    <div class="result-card">
+        <h2>Water Quality Prediction</h2>
+        <p>{{ prediction_text }}</p>
+    </div>
+</body>
+</html>
+
